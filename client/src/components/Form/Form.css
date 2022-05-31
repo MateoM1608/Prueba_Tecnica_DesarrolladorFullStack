@@ -1,0 +1,42 @@
+
+
+.divGlobal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container{
+    margin-top: 100px;
+    width: 700px;
+    border: solid 2px #803cd4;
+    border-radius: 25px;
+    
+    
+}
+
+.containerName{
+    background-color: #803cd4;
+    margin-top: -13px;
+    margin-left: 200px;
+    width: 300px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.nameForm{
+    padding-top: 40px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 18px;
+}
+
+.btn{
+    background-color: #803cd4;
+    border: transparent;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    width: 250px;
+    font-size: 20px;
+}
