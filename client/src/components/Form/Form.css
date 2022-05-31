@@ -2,8 +2,25 @@
 
 .divGlobal{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color: #f8f4f4;
+    padding-bottom: 40px;
+}
+.LogoPerspektiva{
+    background-image: url("https://pbs.twimg.com/profile_images/1366552124511944706/l7Y2oyq8_400x400.jpg");
+    width: 100px;
+    height: 100px;
+    background-position:  center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    border-radius: 50px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.575);
+
 }
 
 .container{
@@ -11,6 +28,7 @@
     width: 700px;
     border: solid 2px #803cd4;
     border-radius: 25px;
+    padding-bottom: 50px;
     
     
 }
@@ -38,5 +56,158 @@
     padding: 10px;
     border-radius: 25px;
     width: 250px;
-    font-size: 20px;
+    font-size: 18px;
+    cursor: pointer;
 }
+
+.btnBack{
+    background-color: #f8f4f4;
+    padding: 10px;
+    border-radius: 25px;
+    width: 250px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top:490px;
+    left:540px;
+}
+
+.input{
+    border: 0px transparent;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 280px;
+}
+.input::placeholder{
+    color: rgba(0, 0, 0, 0.301);
+}
+.input:focus{
+    outline: none;
+}
+
+
+
+.inputGenero{
+    border: transparent;
+    margin-left: 20px;
+    width: 80px;
+    height: 33px;
+    background-color: white;
+}
+.inputGenero::placeholder{
+    color: rgba(0, 0, 0, 0.301);
+}
+.inputGenero:focus{
+    outline: none;
+}
+
+
+.inputCiudad{
+    border: transparent;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 280px;
+    height: 33px;
+}
+.inputCiudad::placeholder{
+    color: rgba(0, 0, 0, 0.301);
+}
+.inputCiudad:focus{
+    outline: none;
+}
+.genero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.divRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.radius{
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 12px;
+    color: rgb(0, 195, 255);
+    font-weight: 800;
+}
+
+.radius input[type=radio]{
+    border: 0px transparent;
+    width: 30px;
+    height: 3rem;
+
+    
+}
+.icon{
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    width: 260px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.349);
+
+}
+
+.iconGenero{
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    width: 120px;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 25px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.349);
+
+
+}
+
+.iconCiudad{
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    width: 260px;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 15px;
+    margin-left: 30px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.349);
+}
+
+.txt{
+    margin-top: 30px;
+    color: rgba(0, 0, 0, 0.301);
+    font-size: 12px;
+}
+
+.btnInicio{
+    border: transparent;
+    background-color: transparent;
+    color: #803cd4;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+ 
