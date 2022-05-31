@@ -12,7 +12,7 @@ const Inicio = () => {
                 <h3>Registrate para vivir</h3>
                 <h3>la experiencia virtual.</h3>
             </div>
-            < Link to="/ruta-protegida">
+            < Link to="/registro">
             <button>Registrarme</button>
             </Link>
         </div>

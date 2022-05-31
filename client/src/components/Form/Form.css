@@ -68,8 +68,10 @@
     font-size: 18px;
     cursor: pointer;
     position: absolute;
+    display: flex;
+    align-items: center;
     top:490px;
-    left:540px;
+    left: 40%;
 }
 
 .input{
@@ -208,6 +210,24 @@
     font-weight: 700;
     cursor: pointer;
     margin-top: -10px;
+}
+
+.dangerCorreo{
+    color: red;
+    font-size: 10px;
+    text-align: center; 
+    position: absolute;
+    top: 320px;
+    left: 57%;
+}
+
+.dangerPassword{
+    color: red;
+    font-size: 10px;
+    text-align: center; 
+    position: absolute;
+    top: 390px;
+    left: 57%; 
 }
 
  
