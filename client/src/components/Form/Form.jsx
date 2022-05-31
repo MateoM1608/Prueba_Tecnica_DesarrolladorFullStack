@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Form.css'
 
 const Form = () => {
 
@@ -18,9 +19,11 @@ const Form = () => {
     }
 
     return (
-        <div>
-                <div>
-                    <h1>FORMULARIO DE REGISTRO</h1>
+        <div className="divGlobal">
+                <div className="container">
+                    <div className="containerName">
+                    <h1 className="nameForm">FORMULARIO DE REGISTRO</h1>
+                    </div>
                     <form>
                         <div>
                             <input 
@@ -104,7 +107,7 @@ const Form = () => {
                             />
 
                         </div>
-                        
+                            <button className="btn" type="submit">REGISTRAR</button>
                     </form>
                 </div>
         </div>
