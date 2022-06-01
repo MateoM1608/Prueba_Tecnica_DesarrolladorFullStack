@@ -1,0 +1,97 @@
+
+
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1.25);
+    width: 280px;
+    padding: 20px 38px;
+    background-color: #f8f4f4;
+    border: 2px solid #803cd4;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.575);
+    border-radius: 25px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms,
+                
+}
+
+.pupopHidden{
+    visibility: hidden;
+}
+
+.close-btn{
+    position: absolute;
+    top:10px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #803cd4;
+    cursor: pointer;
+    border-radius: 15px;
+    text-align: center;
+    padding-bottom: 1px;
+    border: transparent
+}
+
+
+.popup .close-btn:hover{
+    background-color: #803cd4;
+    color: white;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.login{
+    text-align: center;
+}
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputLogin{
+    background-color: white;
+    border: transparent;
+    padding-left: 20px;
+    width: 260px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.349);
+    margin-bottom: 15px;
+}
+
+.inputLogin:focus{
+    outline: none;
+}
+
+.labelLogin{
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.658);
+    text-align: left;
+}
+
+.btnLogin{
+    background-color: #803cd4;
+    color: white;
+    border: transparent;
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btnLogin:hover{
+    color: #803cd4;
+    background-color: white;
+    border: 1px solid #803cd4;
+    transition-property: all;
+    transition-duration: 0.4s;
+}

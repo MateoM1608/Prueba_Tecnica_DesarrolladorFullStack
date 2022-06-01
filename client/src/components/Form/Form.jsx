@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import LogIn from '../Login/Login'
 import './Form.css'
 
-const Form = () => {
+const Form = ({toggleModalLogIn}) => {
 
     const [ error , setError] = useState({
         email:"",
@@ -88,7 +89,7 @@ const Form = () => {
                     <div className="containerName">
                     <h1 className="nameForm">FORMULARIO DE REGISTRO</h1>
                     </div>
-                    <form>
+                    <form onSubmit={(e) => handleSubmit(e)}>
                         <div className="divRow">
                             <div className="icon" style={{backgroundImage: "url("+"https://img2.freepng.es/20181125/ewk/kisspng-computer-icons-user-scalable-vector-graphics-clip-user-registration-icon-bing-images-5bfac692a07363.8004242815431614906572.jpg"+")"}}>
                                 <input 
@@ -206,7 +207,7 @@ const Form = () => {
                     </form>
                 </div>
                 <p className="txt">¿Ya tienes una cuenta?</p>
-                <button className="btnInicio">Inicia sesión</button>
+                <button onClick={() => toggleModalLogIn()} className="btnInicio">Inicia sesión</button>
         </div>
     )
 }

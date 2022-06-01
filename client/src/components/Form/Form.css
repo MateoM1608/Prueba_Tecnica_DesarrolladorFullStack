@@ -7,6 +7,7 @@
     align-items: center;
     background-color: #f8f4f4;
     padding-bottom: 40px;
+    margin-bottom: -500px;
 }
 .LogoPerspektiva{
     background-image: url("https://pbs.twimg.com/profile_images/1366552124511944706/l7Y2oyq8_400x400.jpg");
@@ -35,8 +36,9 @@
 
 .containerName{
     background-color: #803cd4;
-    margin-top: -13px;
+    margin-top: 0px;
     margin-left: 200px;
+    padding-top: 1px;
     width: 300px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -46,7 +48,10 @@
     padding-top: 40px;
     padding-bottom: 10px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'roboto', sans-serif;
+
 }
 
 .btn{
@@ -57,7 +62,10 @@
     border-radius: 25px;
     width: 250px;
     font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
+    font-family: 'roboto', sans-serif;
+
 }
 
 .btnBack{
@@ -79,9 +87,12 @@
     margin-left: 20px;
     margin-right: 20px;
     width: 280px;
+
 }
 .input::placeholder{
     color: rgba(0, 0, 0, 0.301);
+    font-family: 'roboto', sans-serif;
+
 }
 .input:focus{
     outline: none;
@@ -98,6 +109,8 @@
 }
 .inputGenero::placeholder{
     color: rgba(0, 0, 0, 0.301);
+    font-family: 'roboto', sans-serif;
+
 }
 .inputGenero:focus{
     outline: none;
@@ -210,6 +223,8 @@
     font-weight: 700;
     cursor: pointer;
     margin-top: -10px;
+    font-family: 'roboto', sans-serif;
+
 }
 
 .dangerCorreo{

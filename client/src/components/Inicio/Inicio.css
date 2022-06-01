@@ -1,0 +1,74 @@
+ .global{
+    background-image: url("https://i.postimg.cc/yYGCHhV6/Dise-o-sin-t-tulo-21.png");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex; 
+    margin-bottom: -500px;
+ }
+
+ .position{
+    padding-left: 60%;
+    padding-top: 13%;
+    float: right;
+    text-align: center;
+    transition-delay: 2s;
+    transition-delay: initial
+ }
+
+ .txt-bienven{
+     color: white;
+     font-size: 70px;
+     font-family: 'roboto', sans-serif;
+     text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.575);
+
+ }
+  
+ .txt-feria{
+     color: white;
+     font-size: 53px;
+     margin-top: -55px;
+     font-family: 'roboto', sans-serif;
+     text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.575);
+
+ }
+
+.texto{
+    color: white;
+    font-size: 20px;
+    margin-bottom: -20px;
+    font-family: 'roboto', sans-serif;
+    text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.575);
+
+}
+
+.btn-regist{
+    margin-top: 40px;
+    background-color: #803cd4;
+    border: transparent;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'roboto', sans-serif;
+    padding: 5px 30px 5px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.575);
+
+}
+
+.LogoPerspektivaInicio{
+    background-image: url("https://pbs.twimg.com/profile_images/1366552124511944706/l7Y2oyq8_400x400.jpg");
+    width: 100px;
+    height: 100px;
+    background-position:  center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 84%;
+    right: 21%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.575);
+}
