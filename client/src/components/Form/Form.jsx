@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import LogIn from '../Login/Login'
 import './Form.css'
+import swal from 'sweetalert';
 
-const Form = ({toggleModalLogIn}) => {
+const Form = ({toggleModalLogIn, createUser}) => {
 
     const [ error , setError] = useState({
         email:"",
         confirmacion: ""
     })
+    const [confirmPassword, setConfirmPassword] = useState("")
     
     const [ estado, setEstado ] = useState({
-        Nombre: "",
-        Apellido: "",
-        Celular: "",
-        Correo: "",
-        Contraseña: "",
-        ConfirmarCon: "",
-        genero: "",
-        Ciudad:""
+        name: "",
+        lastname: "",
+        cellphone: "",
+        email: "",
+        password: "",
+        gender: "",
+        city:""
     })
 
     const handleChange = (e) => {
@@ -27,12 +27,10 @@ const Form = ({toggleModalLogIn}) => {
         })
     }
     
-    const handleGenre = (e)=>{
-        console.log(e.target.value)
-        console.log('funciona')
+    const handleGender = (e)=>{
         setEstado({
             ...estado,
-            genero : e.target.value
+            gender : e.target.value
         })
     }
 
@@ -42,43 +40,54 @@ const Form = ({toggleModalLogIn}) => {
         : setError({...error, email: ""});
         setEstado({
             ...estado,
-            Correo: e
+            email: e
         })
     }
 
     const handlePassword = (e) => {
-        setEstado({
-            ...estado,
-            Contraseña: e
-        })
-        e === estado.ConfirmarCon
+        setConfirmPassword(e)
+        e === estado.password
         ? setError({...error, confirmacion: ""})
-        : setError({...estado, confirmacion: "La contraseña no coincide"})
+        : setError({...error, confirmacion: "La contraseña no coincide"})
     }
 
     const validatePassword = (e) => {
         setEstado({
             ...estado,
-            ConfirmarCon: e
+            password: e
         })
-        estado.Contraseña === e
+        confirmPassword === e
         ? setError({...error, confirmacion: ""})
-        : setError({...estado, confirmacion: "La contraseña no coincide"})
+        : setError({...error, confirmacion: "La contraseña no coincide"})
     }
 
    const handleSubmit = (e) => {
         e.preventDefault()
-        if(estado.Nombre  &&
-        estado.Apellido &&
-        estado.Celular &&
-        estado.Correo &&
-        estado.Contraseña &&
-        estado.ConfirmarCon &&
-        estado.genero &&
-        estado.Ciudad &&
-        !error.email &&
-        !error.confirmacion){
-
+        console.log(estado.name)
+        if(estado.name &&
+            estado.lastname &&
+            estado.cellphone &&
+            estado.email &&
+            estado.password &&
+            estado.city && 
+            estado.gender &&
+            !error.confirmacion &&
+            !error.email ){
+           
+            console.log(estado)
+            createUser(estado)
+            setEstado({
+                name: "",
+                lastname: "",
+                cellphone: "",
+                email: "",
+                password: "",
+                gender: "",
+                city:""
+            })
+            setConfirmPassword("")
+        }else{
+            swal("Dato errado!", "Algun dato que ingresaste es incorrecto!", "error");
         }
    }
 
@@ -94,8 +103,8 @@ const Form = ({toggleModalLogIn}) => {
                             <div className="icon" style={{backgroundImage: "url("+"https://img2.freepng.es/20181125/ewk/kisspng-computer-icons-user-scalable-vector-graphics-clip-user-registration-icon-bing-images-5bfac692a07363.8004242815431614906572.jpg"+")"}}>
                                 <input 
                                 type="text"
-                                name="Nombre"
-                                value={estado.Nombre}
+                                name="name"
+                                value={estado.name}
                                 onChange={(e) => handleChange(e)}
                                 placeholder="Nombre"
                                 className="input"
@@ -104,8 +113,8 @@ const Form = ({toggleModalLogIn}) => {
                             <div className="icon" style={{backgroundImage: "url("+"https://img2.freepng.es/20181125/ewk/kisspng-computer-icons-user-scalable-vector-graphics-clip-user-registration-icon-bing-images-5bfac692a07363.8004242815431614906572.jpg"+")"}}>
                                 <input 
                                 type="text"
-                                name="Apellido"
-                                value={estado.Apellido}
+                                name="lastname"
+                                value={estado.lastname}
                                 onChange={(e) => handleChange(e)}
                                 placeholder="Apellido"
                                 className="input"
@@ -117,8 +126,8 @@ const Form = ({toggleModalLogIn}) => {
                             <div className="icon" style={{backgroundImage: "url("+"https://w7.pngwing.com/pngs/318/386/png-transparent-smartphone-computer-icons-smartphone-blue-gadget-electronics.png"+")"}}>
                                 <input 
                                     type="number"
-                                    name="Celular"
-                                    value={estado.Celular}
+                                    name="cellphone"
+                                    value={estado.cellphone}
                                     onChange={(e) => handleChange(e)}
                                     placeholder="Celular"
                                     className="input"
@@ -127,8 +136,8 @@ const Form = ({toggleModalLogIn}) => {
                             <div className="icon" style={{backgroundImage: "url("+"https://illustoon.com/photo/2751.png"+")"}}>
                                 <input 
                                     type="text"
-                                    name="Correo"
-                                    value={estado.Correo}
+                                    name="email"
+                                    value={estado.email}
                                     onChange={(e) => validateEmail(e.target.value)}
                                     placeholder="Correo"
                                     className="input"
@@ -142,8 +151,8 @@ const Form = ({toggleModalLogIn}) => {
                             <div className="icon" style={{backgroundImage: "url("+"https://w7.pngwing.com/pngs/932/680/png-transparent-computer-icons-padlock-padlock-blue-technic-desktop-wallpaper.png"+")"}}>
                                 <input 
                                     type="password"
-                                    name="Contraseña"
-                                    value={estado.Contraseña}
+                                    name="password"
+                                    value={confirmPassword}
                                     onChange={(e) => handlePassword(e.target.value)}
                                     placeholder="Contraseña"
                                     className="input"
@@ -153,7 +162,7 @@ const Form = ({toggleModalLogIn}) => {
                                 <input 
                                     type="password"
                                     name="ConfirmarCon"
-                                    value={estado.ConfirmarCon}
+                                    value={estado.password}
                                     onChange={(e) => validatePassword(e.target.value)}
                                     placeholder="Confirmar contraseña"
                                     className="input"
@@ -167,7 +176,7 @@ const Form = ({toggleModalLogIn}) => {
                                 <input 
                                     type="text"
                                     placeholder="Genero"
-                                    value={estado.genero}
+                                    value={estado.gender}
                                     disabled
                                     className="inputGenero"
                                     />
@@ -176,25 +185,25 @@ const Form = ({toggleModalLogIn}) => {
                                 <label className="radius"> M
                                 <input 
                                     type="radio"
-                                    name="genero"
+                                    name="gender"
                                     value="Masculino"
-                                    onChange={(e) => handleGenre(e) }
+                                    onChange={(e) => handleGender(e) }
                                 />
                                 </label>
                                 <label className="radius"> F
                                 <input 
                                     type="radio"
-                                    name="genero"
+                                    name="gender"
                                     value="Femenino"
-                                    onChange={(e) => handleGenre(e) }
+                                    onChange={(e) => handleGender(e) }
                                 />
                                 </label>
                             </div>
                             <div className="iconCiudad" style={{backgroundImage: "url("+"https://thumbs.dreamstime.com/b/trace-el-perno-indicador-de-los-gps-icono-azul-del-vector-104513434.jpg"+")"}}>
                                 <input 
                                     type="text"
-                                    name="Ciudad"
-                                    value={estado.Ciudad}
+                                    name="city"
+                                    value={estado.city}
                                     onChange={(e) => handleChange(e)}
                                     placeholder="Ciudad"
                                     className="inputCiudad"

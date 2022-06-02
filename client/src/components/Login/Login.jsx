@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import './Login.css'
+import swal from 'sweetalert';
 
-const LogIn = ({ isOpenModalLogIn, toggleModalLogIn }) => {
+const LogIn = ({ isOpenModalLogIn, toggleModalLogIn , logIn}) => {
 
   const [ login , setLogin ] = useState({
-    correo: "",
-    contraseña: ""
+    email: "",
+    password: ""
   })
     
   const handleChange =(e) =>{
@@ -17,6 +18,15 @@ const LogIn = ({ isOpenModalLogIn, toggleModalLogIn }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(login.password && login.email){
+      logIn(login)
+      setLogin({
+        email: "",
+        password: ""
+      })
+    }else{
+      swal("Dato errado!", "Algun dato que ingresaste es incorrecto!", "error");
+    }
 
   }
 
@@ -30,19 +40,19 @@ const LogIn = ({ isOpenModalLogIn, toggleModalLogIn }) => {
                 <label className="labelLogin">Correo electronico:</label>
                 <input 
                   type="text" 
-                  name="correo" 
-                  value={login.correo}
+                  name="email" 
+                  value={login.email}
                   onChange={ (e) => handleChange(e)}
                   placeholder="Ingrese Correo" 
                   className="inputLogin"
                 />
             </div>
             <div className="form-element">
-                <label className="labelLogin">Contraseña</label>
+                <label className="labelLogin">Contraseña:</label>
                 <input 
                   type="password" 
-                  name="contraseña"
-                  value={login.contraseña}
+                  name="password"
+                  value={login.password}
                   onChange={ (e) => handleChange(e)}
                   placeholder="Ingrese Contraseña" 
                   className="inputLogin"
