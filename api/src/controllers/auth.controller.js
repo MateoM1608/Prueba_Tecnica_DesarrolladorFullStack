@@ -6,8 +6,6 @@ export const signUp = async (req, res) => {
 
     const {name, lastname, cellphone, email,gender, password, city} = req.body;
 
-    // const userFound = User.find({email})
-    // console.log('email',userFound)
     try{
         console.log(req.body)
     const newUser = new User({
