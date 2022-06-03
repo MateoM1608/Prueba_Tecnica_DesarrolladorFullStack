@@ -1,16 +1,13 @@
 import express from 'express'
 import morgan from 'morgan'
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
 import authRoute from './routes/auth.routes'
+import verify from './routes/verify.routes'
 
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-app.use(bodyParser.json({ limit: '50mb' }));
+
 app.use(morgan('dev'))
 app.use(express.json())
-app.use(cookieParser());
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -22,7 +19,7 @@ app.use((req, res, next) => {
 
 app.use('/auth', authRoute)
 
-
+app.use('/verify', verify)
 
 
 export default app

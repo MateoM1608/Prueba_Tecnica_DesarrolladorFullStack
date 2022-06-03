@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import { Route, useHistory } from 'react-router-dom' 
 import './App.css';
 import Inicio from './components/Inicio/Inicio'
@@ -47,18 +47,17 @@ function App() {
 
 
   return (
-    <div className='App'>
+      <div className='App'>
 
-      <Route exact path="/" render={() => <Inicio/> } />
-      <Route exact path="/registro" render={() => <Form toggleModalLogIn={toggleModalLogIn} createUser={createUser}/>} />
-      <Route exact path="/ruta-segura" render={() => <FileUploader/>} />
-      <LogIn 
-        toggleModalLogIn={toggleModalLogIn}
-        isOpenModalLogIn={isOpenModalLogIn}
-        logIn={logIn}
-      />
-    </div>
-      
+        <Route exact path="/" render={() => <Inicio/> } />
+        <Route exact path="/registro" render={() => <Form toggleModalLogIn={toggleModalLogIn} createUser={createUser}/>} />
+        <Route exact path="/ruta-segura" render={() => <FileUploader/>} />
+        <LogIn 
+          toggleModalLogIn={toggleModalLogIn}
+          isOpenModalLogIn={isOpenModalLogIn}
+          logIn={logIn}
+        />
+      </div>
   );
 }
 
